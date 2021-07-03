@@ -17,14 +17,20 @@ int main()
         for(col=1;col<=row;col++)
         {
              if(col<=center_val)
-             {
-                printf("%c",str[mid++]);
-
-               // printf("%d",col);
-             }
-            else
-                printf("%c",str[temp++]);
+                printf("%c",str[mid++]);//Starting mid to last
+             else
+                printf("%c",str[temp++]);//first to mid
         }
     }
 
 }
+/*
+input:
+    WATER
+output:
+        T
+       TE
+      TER
+     TERW
+    TERWA
+*/
