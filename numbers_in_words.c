@@ -15,8 +15,9 @@ int digits(int num)
 int main()
 {
     char* ones[]={" ","one","two","three","four","five","six","seven","eight","nine"};
-    char* tens[]={" ","ten","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninty"};
-    int num=1258;
+    char* tens[]={"ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","siventeen","eighteen","nineteen"};
+    char* ten_multiples[]={" "," ","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninty"};
+    int num=12;
     int ind,value,count,div;
     count=digits(num);              //digit count
     switch(count)
@@ -38,7 +39,16 @@ int main()
         switch(ind)
         {
             case 4: printf("%s ",ones[value]); break;
-            case 3: printf("%s ",tens[value]); break;
+            case 3:
+                {
+                if(value==1 || value==0)
+                    {
+                    printf("%s ",tens[num%10]);
+                    return 0;
+                    }
+                else
+                    printf("%s ",ten_multiples[value]);
+                }break;
             case 2: printf("%s hundred and ",ones[value]); break;
             case 1: printf("%s thousand ",ones[value]); break;
             default:
